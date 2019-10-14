@@ -20,6 +20,7 @@ async def ping(ctx):
 async def nekoo(ctx):
     await ctx.send('にゃおーん')
     
-
+@client.event
+async def discord.on_voice_state_update(member, before, after):
 
 bot.run(token)
