@@ -15,6 +15,8 @@ async def on_message(message):
     if bot.user in message.mentions: # 話しかけられたかの判定
         reply = f'{message.author.mention} 呼んだ？' # 返信メッセージの作成
         await message.channel.send(reply) # 返信メッセージを送信
+        reply = f'{message.author.mention} いや読んでないか' # 返信メッセージの作成
+        await message.channel.send(reply) # 返信メッセージを送信
         
 @bot.event
 async def on_message_a(message1):
