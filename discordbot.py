@@ -10,7 +10,9 @@ client = discord.Client()
 @bot.event
 async def on_command_error(ctx, error):
     await ctx.send(str(error))
-
+    
+@bot.event
+async def discord.on_voice_state_update(member, before, after):
 
 @bot.command()
 async def ping(ctx):
@@ -19,8 +21,5 @@ async def ping(ctx):
 @bot.command()
 async def nekoo(ctx):
     await ctx.send('にゃおーん')
-    
-@bot.event
-async def discord.on_voice_state_update(member, before, after):
 
 bot.run(token)
