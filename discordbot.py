@@ -16,9 +16,9 @@ async def on_message(message):
         reply = f'{message.author.mention} 呼んだ？ + /n + いや読んでないか' # 返信メッセージの作成
         await message.channel.send(reply) # 返信メッセージを送信
         
-@bot.event
-async def on_message_a(message):
-    if message.content.startswith('/join'):
+@bot.command()
+async def join(message):
+    if message=='/join':
         role = discord.utils.get(message.guild.roles, name='test')
         await message.author.add_roles(role)
         reply = f'{message.author.mention} ようこそ！'
