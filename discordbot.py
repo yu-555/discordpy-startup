@@ -19,7 +19,7 @@ async def on_message(message):
 @bot.event
 async def on_message_a(message):
     if message.content.startswith('/join'):
-        role = discord.utils.get(message.guild.roles, name='member')
+        role = discord.utils.get(message.guild.roles, name='test')
         await message.author.add_roles(role)
         reply = f'{message.author.mention} ようこそ！'
         await message.channel.send(reply)
