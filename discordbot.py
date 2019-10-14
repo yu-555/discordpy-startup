@@ -15,7 +15,16 @@ async def on_message(message):
     if bot.user in message.mentions: # 話しかけられたかの判定
         reply = f'{message.author.mention} 呼んだ？' # 返信メッセージの作成
         await message.channel.send(reply) # 返信メッセージを送信
-
+        
+@bot.event
+async def on_message(message):
+    if message.content.startswith('/join'):
+        role = discord.utils.get(message.guild.roles, name='member')
+        await message.author.add_roles(role)
+        reply = f'{message.author.mention} ようこそ！'
+        await message.channel.send(reply)
+        
+        
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
